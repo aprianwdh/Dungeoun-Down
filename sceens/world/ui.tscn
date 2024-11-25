@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://mbs2yfovvhjx"]
+
+[ext_resource type="Texture2D" uid="uid://bmrx2ugfj5kih" path="res://assets/weapons/wolfweapons.png" id="1_ik0ej"]
+[ext_resource type="Script" path="res://scripts/UI/ui.gd" id="1_joo8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j6lt"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4r6h"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddav4"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cxo8"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekk8o"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtp4d"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"iddle_gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j6lt")
+}],
+"loop": false,
+"name": &"iddle_knife",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4r6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddav4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cxo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekk8o")
+}],
+"loop": false,
+"name": &"tusuk",
+"speed": 16.0
+}]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_joo8t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(541, 434)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_rtp4d")
+animation = &"iddle_knife"
+autoplay = "iddle_knife"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -98.0
+offset_right = 577.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.027451, 0.145098, 0.376471, 1)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
