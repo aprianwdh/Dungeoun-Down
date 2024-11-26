@@ -24,15 +24,16 @@ environment = SubResource("Environment_vutjw")
 [node name="lantai" parent="." instance=ExtResource("1_c8550")]
 
 [node name="wall" parent="." instance=ExtResource("1_crm6k")]
+transform = Transform3D(40, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, 20)
 
 [node name="wall2" parent="." instance=ExtResource("1_crm6k")]
-transform = Transform3D(40, 0, 0, 0, 10, 0, 0, 0, 1, 0, 0, -20)
+transform = Transform3D(40, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -20)
 
 [node name="wall3" parent="." instance=ExtResource("1_crm6k")]
-transform = Transform3D(-1.74846e-06, 0, 1, 0, 10, 0, -40, 0, -4.37114e-08, 20, 0, 0)
+transform = Transform3D(-1.74846e-06, 0, 1, 0, 10, 0, -40, 0, -4.37114e-08, 20, 5, 0)
 
 [node name="wall4" parent="." instance=ExtResource("1_crm6k")]
-transform = Transform3D(-1.74846e-06, 0, 1, 0, 10, 0, -40, 0, -4.37114e-08, -20, 0, 0)
+transform = Transform3D(-1.74846e-06, 0, 1, 0, 10, 0, -40, 0, -4.37114e-08, -20, 5, 0)
 
 [node name="player" parent="." instance=ExtResource("2_8cvvf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00764325, 0, 0.625896)

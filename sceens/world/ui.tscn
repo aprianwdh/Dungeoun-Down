@@ -1,11 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://mbs2yfovvhjx"]
+[gd_scene load_steps=14 format=3 uid="uid://mbs2yfovvhjx"]
 
 [ext_resource type="Texture2D" uid="uid://bmrx2ugfj5kih" path="res://assets/weapons/wolfweapons.png" id="1_ik0ej"]
 [ext_resource type="Script" path="res://scripts/UI/ui.gd" id="1_joo8t"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0avsk"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(0, 32, 64, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2j6lt"]
 atlas = ExtResource("1_ik0ej")
 region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgos4"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m55o7"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjaqd"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(192, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofcp3"]
+atlas = ExtResource("1_ik0ej")
+region = Rect2(256, 32, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4r6h"]
 atlas = ExtResource("1_ik0ej")
@@ -25,8 +45,11 @@ region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rtp4d"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0avsk")
+}],
+"loop": false,
 "name": &"iddle_gun",
 "speed": 5.0
 }, {
@@ -38,10 +61,22 @@ animations = [{
 "name": &"iddle_knife",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgos4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m55o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjaqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofcp3")
+}],
+"loop": false,
 "name": &"shoot",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -68,7 +103,7 @@ script = ExtResource("1_joo8t")
 position = Vector2(541, 434)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_rtp4d")
-animation = &"iddle_knife"
+animation = &"shoot"
 autoplay = "iddle_knife"
 
 [node name="ColorRect" type="ColorRect" parent="."]
