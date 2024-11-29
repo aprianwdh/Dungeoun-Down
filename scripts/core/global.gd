@@ -1,6 +1,6 @@
 extends Node
 
-var ammo : int = 10
+var ammo : int = 100
 var current_weapon : String = 'machine'
 
 

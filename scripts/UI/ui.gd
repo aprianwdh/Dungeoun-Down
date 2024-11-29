@@ -5,7 +5,7 @@ var ammo = Global.ammo
 
 var time_since_last_shoot = 0.0
 var fire_rate = 1.0
-
+var can_shoots = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_since_last_shoot += delta
-	var can_shoots = time_since_last_shoot >= (1.0/fire_rate)
+	can_shoots = time_since_last_shoot >= (1.0/fire_rate)
 	
 	if Global.current_weapon != 'knife' and Global.ammo <=0 :
 		Global.current_weapon = 'knife'
@@ -46,7 +46,11 @@ func _process(delta):
 		_:
 			fire_rate = 1.0
 			
+	update_health()
 
 
 func _on_animated_sprite_2d_animation_finished():
 	$AnimatedSprite2D.play('iddle_'+Global.current_weapon)
+	
+func update_health():
+	$Health.text = str(get_parent().player_health)

@@ -3,11 +3,17 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const TURN_SPEED = 0.05
+const TURN_SPEED = 0.03
+
+@onready var ui = $UI
+@onready var ray= $Camera3D/RayCast3D
+var player_health = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	add_to_group("Player")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -32,5 +38,20 @@ func _physics_process(delta):
 		self.rotate_y(TURN_SPEED)
 	if Input.is_action_pressed('ui_right'):
 		self.rotate_y(-TURN_SPEED)
+		
+	if Input.is_action_pressed("ui_accept"):
+		if ui.can_shoots == true:
+			shoot()
 
 	move_and_slide()
+	
+func shoot():
+	if ray.is_colliding() and ray.get_collider().has_method("die"):
+		ray.get_collider().die()
+		
+func take_damage():
+	player_health -= 10
+	print(player_health)
+	if player_health <= 0:
+		queue_free()
+		
