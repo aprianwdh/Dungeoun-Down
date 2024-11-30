@@ -47,10 +47,36 @@ func _process(delta):
 			fire_rate = 1.0
 			
 	update_health()
+	update_ammo_label()
+	update_lives_label()
+	update_face(Global.health_player)
 
 
 func _on_animated_sprite_2d_animation_finished():
 	$AnimatedSprite2D.play('iddle_'+Global.current_weapon)
 	
 func update_health():
-	$Health.text = str(get_parent().player_health)
+	$Health.text = str(Global.health_player)
+
+func update_ammo_label():
+	$Ammo.text = str(Global.ammo)
+	
+func update_lives_label():
+	$Lives.text = str(Global.lives)
+	
+func update_face(health):
+	var animated_face = ''
+	if health > 90:
+		animated_face = '90'
+	elif health > 80:
+		animated_face = '80'
+	elif health > 70:
+		animated_face = '70'
+	elif health > 60:
+		animated_face = '60'
+	elif health > 50:
+		animated_face = '50'
+	elif health > 40:
+		animated_face = '40'
+		
+	$FACE.play(animated_face)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhi4mdgk30145"]
+
+[ext_resource type="Texture2D" uid="uid://clqmulgkrmyog" path="res://assets/items/wolf-items.png" id="1_7le7u"]
+[ext_resource type="Script" path="res://scripts/items/ammo.gd" id="1_nl1hq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b7jq"]
+radius = 1.04225
+height = 2.0845
+
+[node name="ammo" type="Area3D"]
+script = ExtResource("1_nl1hq")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 1.9445, 0)
+billboard = 2
+texture = ExtResource("1_7le7u")
+hframes = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.591005, 0)
+shape = SubResource("CapsuleShape3D_6b7jq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

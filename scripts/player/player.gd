@@ -7,7 +7,7 @@ const TURN_SPEED = 0.03
 
 @onready var ui = $UI
 @onready var ray= $Camera3D/RayCast3D
-var player_health = 100
+#var player_health = Global.health_player
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -50,8 +50,7 @@ func shoot():
 		ray.get_collider().die()
 		
 func take_damage():
-	player_health -= 10
-	print(player_health)
-	if player_health <= 0:
+	Global.health_player -= 5
+	if Global.health_player <= 0:
 		queue_free()
 		

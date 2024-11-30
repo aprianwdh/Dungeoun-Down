@@ -40,7 +40,6 @@ func attack():
 		is_attacking = true
 		$AnimatedSprite3D.play("shoot")
 		if $RayCast3D.is_colliding() and $RayCast3D.get_collider().has_method("take_damage"):
-		#if $RayCast3D.is_colliding() and $RayCast3D:
 			$RayCast3D.get_collider().take_damage()
 		await $AnimatedSprite3D.animation_finished
 		is_attacking = false
