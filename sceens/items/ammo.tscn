@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/items/ammo.gd" id="1_nl1hq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b7jq"]
-radius = 1.04225
-height = 2.0845
+radius = 1.34479
+height = 2.75038
 
 [node name="ammo" type="Area3D"]
 script = ExtResource("1_nl1hq")

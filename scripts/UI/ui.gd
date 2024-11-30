@@ -50,6 +50,8 @@ func _process(delta):
 	update_ammo_label()
 	update_lives_label()
 	update_face(Global.health_player)
+	update_levels_lebel()
+	update_score_label()
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -80,3 +82,9 @@ func update_face(health):
 		animated_face = '40'
 		
 	$FACE.play(animated_face)
+	
+func update_levels_lebel():
+	$Level.text = str(Global.current_level)
+	
+func update_score_label():
+	$Score.text = str(Global.player_score)

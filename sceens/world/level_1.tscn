@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8vdgxadqu04p"]
+
+[ext_resource type="PackedScene" uid="uid://c6nmml7ydxdpx" path="res://sceens/world/base_level.tscn" id="1_r0b2v"]
+[ext_resource type="PackedScene" uid="uid://bevssue7t2q25" path="res://sceens/world/wall.tscn" id="2_xk4gt"]
+[ext_resource type="PackedScene" uid="uid://cibbvn1a3ydmx" path="res://sceens/enemy/guard.tscn" id="3_i0jny"]
+[ext_resource type="PackedScene" uid="uid://bhi4mdgk30145" path="res://sceens/items/ammo.tscn" id="4_3pkxq"]
+[ext_resource type="PackedScene" uid="uid://dmufaahfdctgi" path="res://sceens/world/next_level.tscn" id="5_cu7wo"]
+[ext_resource type="PackedScene" uid="uid://8j7vvrdmc0eq" path="res://sceens/world/level_2.tscn" id="6_a5q4l"]
+
+[node name="level1" instance=ExtResource("1_r0b2v")]
+
+[node name="player" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5498, 0, 28.1674)
+
+[node name="EnemyGuard" type="Node" parent="." index="4"]
+
+[node name="Guard" parent="EnemyGuard" index="0" instance=ExtResource("3_i0jny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.62549)
+
+[node name="Guard2" parent="EnemyGuard" index="1" instance=ExtResource("3_i0jny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79028, 0, 1.62549)
+
+[node name="Guard3" parent="EnemyGuard" index="2" instance=ExtResource("3_i0jny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79028, 0, 27.245)
+
+[node name="Guard4" parent="EnemyGuard" index="3" instance=ExtResource("3_i0jny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79028, 0, -29.7275)
+
+[node name="walls" type="Node" parent="." index="5"]
+
+[node name="wall" parent="walls" index="0" instance=ExtResource("2_xk4gt")]
+transform = Transform3D(80, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, 39.8325)
+skeleton = NodePath("../..")
+
+[node name="wall2" parent="walls" index="1" instance=ExtResource("2_xk4gt")]
+transform = Transform3D(80, 0, 0, 0, 10, 0, 0, 0, 1, -14.4008, 5, 14.0391)
+skeleton = NodePath("../..")
+
+[node name="wall3" parent="walls" index="2" instance=ExtResource("2_xk4gt")]
+transform = Transform3D(80, 0, 0, 0, 10, 0, 0, 0, 1, 16.0076, 5, -11.3983)
+skeleton = NodePath("../..")
+
+[node name="wall4" parent="walls" index="3" instance=ExtResource("2_xk4gt")]
+transform = Transform3D(80, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -39.5878)
+skeleton = NodePath("../..")
+
+[node name="wall5" parent="walls" index="4" instance=ExtResource("2_xk4gt")]
+transform = Transform3D(-3.49691e-06, 0, 1, 0, 10, 0, -80, 0, -4.37114e-08, -40, 5, -0.327435)
+skeleton = NodePath("../..")
+
+[node name="wall6" parent="walls" index="5" instance=ExtResource("2_xk4gt")]
+transform = Transform3D(-3.49691e-06, 0, 1, 0, 10, 0, -80, 0, -4.37114e-08, 40, 5, -0.327)
+skeleton = NodePath("../..")
+
+[node name="Ammo" type="Node" parent="." index="6"]
+
+[node name="ammo" parent="Ammo" index="0" instance=ExtResource("4_3pkxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1017, 0, 0)
+
+[node name="ammo2" parent="Ammo" index="1" instance=ExtResource("4_3pkxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1017, 0, 4.98235)
+
+[node name="ammo3" parent="Ammo" index="2" instance=ExtResource("4_3pkxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1017, 0, 24.713)
+
+[node name="ammo4" parent="Ammo" index="3" instance=ExtResource("4_3pkxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8987, -9.53674e-07, -24.8895)
+
+[node name="NextLevel" parent="." index="7" instance=ExtResource("5_cu7wo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.2888, 2.38419e-06, -25.2896)
+next_Level = ExtResource("6_a5q4l")

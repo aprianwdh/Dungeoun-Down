@@ -4,7 +4,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2plth"]
 albedo_texture = ExtResource("1_ajo7w")
-uv1_scale = Vector3(20, 20, 0)
+uv1_scale = Vector3(40, 40, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oovmv"]
 

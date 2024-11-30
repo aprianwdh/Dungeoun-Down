@@ -357,10 +357,10 @@ animations = [{
 script = ExtResource("1_joo8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(541, 434)
+position = Vector2(542, 382)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_rtp4d")
-animation = &"iddle_knife"
+animation = &"iddle_machine"
 autoplay = "iddle_knife"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -370,7 +370,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -577.0
-offset_top = -98.0
+offset_top = -152.0
 offset_right = 577.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -379,13 +379,13 @@ color = Color(0.027451, 0.145098, 0.376471, 1)
 [node name="Health" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.615
-anchor_top = 0.851
-anchor_right = 0.693
+anchor_top = 0.802
+anchor_right = 0.694
 anchor_bottom = 1.0
 offset_left = 11.52
-offset_top = 48.552
-offset_right = -6.336
-offset_bottom = -21.0
+offset_top = 53.304
+offset_right = -7.48804
+offset_bottom = -33.0
 label_settings = SubResource("LabelSettings_ui1vt")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -417,9 +417,9 @@ anchor_top = 0.851
 anchor_right = 0.693
 anchor_bottom = 1.0
 offset_left = 142.52
-offset_top = 48.552
+offset_top = 21.552
 offset_right = 124.664
-offset_bottom = -6.0
+offset_bottom = -33.0
 label_settings = SubResource("LabelSettings_ui1vt")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -451,9 +451,9 @@ anchor_top = 0.851
 anchor_right = 0.693
 anchor_bottom = 1.0
 offset_left = -245.48
-offset_top = 47.552
+offset_top = 20.552
 offset_right = -263.336
-offset_bottom = -7.0
+offset_bottom = -34.0
 label_settings = SubResource("LabelSettings_ui1vt")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -465,10 +465,10 @@ anchor_left = 0.62
 anchor_top = 0.849
 anchor_right = 0.686
 anchor_bottom = 1.0
-offset_left = -49.64
-offset_top = -70.7721
-offset_right = 22.608
-offset_bottom = -47.0001
+offset_left = -57.14
+offset_top = -76.7151
+offset_right = 16.108
+offset_bottom = -41.0571
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -478,8 +478,76 @@ label_settings = SubResource("LabelSettings_aijl8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Level" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.615
+anchor_top = 0.851
+anchor_right = 0.693
+anchor_bottom = 1.0
+offset_left = -368.48
+offset_top = 20.552
+offset_right = -386.336
+offset_bottom = -34.0
+label_settings = SubResource("LabelSettings_ui1vt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Level"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62
+anchor_top = 0.849
+anchor_right = 0.686
+anchor_bottom = 1.0
+offset_left = -51.14
+offset_top = -76.7151
+offset_right = 22.108
+offset_bottom = -41.0571
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "LEVELS"
+label_settings = SubResource("LabelSettings_aijl8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.615
+anchor_top = 0.851
+anchor_right = 0.693
+anchor_bottom = 1.0
+offset_left = -495.48
+offset_top = 20.552
+offset_right = -513.336
+offset_bottom = -34.0
+label_settings = SubResource("LabelSettings_ui1vt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62
+anchor_top = 0.849
+anchor_right = 0.686
+anchor_bottom = 1.0
+offset_left = -51.14
+offset_top = -76.7151
+offset_right = 22.108
+offset_bottom = -41.0571
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "SCORE"
+label_settings = SubResource("LabelSettings_aijl8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="FACE" type="AnimatedSprite2D" parent="."]
-position = Vector2(592, 600)
+position = Vector2(610, 562)
 scale = Vector2(3, 2.75)
 sprite_frames = SubResource("SpriteFrames_yvjid")
 animation = &"40"
