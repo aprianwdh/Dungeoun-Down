@@ -444,6 +444,37 @@ label_settings = SubResource("LabelSettings_aijl8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="WEAPON" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.84
+anchor_top = 0.889
+anchor_right = 0.944
+anchor_bottom = 0.975
+offset_left = 27.3199
+offset_top = -3.07202
+offset_right = -20.488
+offset_bottom = -16.8
+
+[node name="Label" type="Label" parent="WEAPON"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.833
+anchor_right = 0.686
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -70.1001
+offset_right = 22.608
+offset_bottom = -47.0001
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "WEAPON"
+label_settings = SubResource("LabelSettings_aijl8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Lives" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.615

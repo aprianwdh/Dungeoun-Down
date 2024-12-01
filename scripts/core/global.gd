@@ -1,7 +1,7 @@
 extends Node
 
-var ammo : int = 100
-var current_weapon : String = 'machine'
+var ammo : int = 10
+var current_weapon : String = 'gun'
 var health_player = 100
 var lives = 3
 var current_level = 1

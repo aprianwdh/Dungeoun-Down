@@ -6,11 +6,17 @@ var ammo = Global.ammo
 var time_since_last_shoot = 0.0
 var fire_rate = 1.0
 var can_shoots = true
+var texture_weapon = {
+	'gun' : preload('res://assets/weapons/hudgun.png'),
+	'mini' : preload('res://assets/weapons/hudmachinegun.png'),
+	'machine' : preload('res://assets/weapons/hudmini.png'),
+	'knife' : preload('res://assets/weapons/hudknife.png'),
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play('iddle_'+Global.current_weapon)
-
+	update_weapon_texture()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,6 +58,7 @@ func _process(delta):
 	update_face(Global.health_player)
 	update_levels_lebel()
 	update_score_label()
+	update_weapon_texture()
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -88,3 +95,7 @@ func update_levels_lebel():
 	
 func update_score_label():
 	$Score.text = str(Global.player_score)
+	
+func update_weapon_texture():
+	if $WEAPON.texture != texture_weapon[Global.current_weapon]:
+		$WEAPON.texture = texture_weapon[Global.current_weapon]

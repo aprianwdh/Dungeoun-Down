@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8vdgxadqu04p"]
+[gd_scene load_steps=10 format=3 uid="uid://b8vdgxadqu04p"]
 
 [ext_resource type="PackedScene" uid="uid://c6nmml7ydxdpx" path="res://sceens/world/base_level.tscn" id="1_r0b2v"]
 [ext_resource type="PackedScene" uid="uid://bevssue7t2q25" path="res://sceens/world/wall.tscn" id="2_xk4gt"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bhi4mdgk30145" path="res://sceens/items/ammo.tscn" id="4_3pkxq"]
 [ext_resource type="PackedScene" uid="uid://dmufaahfdctgi" path="res://sceens/world/next_level.tscn" id="5_cu7wo"]
 [ext_resource type="PackedScene" uid="uid://8j7vvrdmc0eq" path="res://sceens/world/level_2.tscn" id="6_a5q4l"]
+[ext_resource type="PackedScene" uid="uid://ccw80jpy36yr7" path="res://sceens/items/mini.tscn" id="7_pi18n"]
+[ext_resource type="PackedScene" uid="uid://c1fq6sg37o718" path="res://sceens/items/machine.tscn" id="8_47lv8"]
+[ext_resource type="PackedScene" uid="uid://5srn4hv3qgqt" path="res://sceens/items/medkit.tscn" id="9_k8a0h"]
 
 [node name="level1" instance=ExtResource("1_r0b2v")]
 
@@ -69,3 +72,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8987, -9.53674e-07, -24.8
 [node name="NextLevel" parent="." index="7" instance=ExtResource("5_cu7wo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.2888, 2.38419e-06, -25.2896)
 next_Level = ExtResource("6_a5q4l")
+
+[node name="machine" parent="." index="8" instance=ExtResource("7_pi18n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3077, 0, 21.5335)
+
+[node name="machine2" parent="." index="9" instance=ExtResource("8_47lv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11933, 0, 35.0257)
+
+[node name="medkit" parent="." index="10" instance=ExtResource("9_k8a0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6148, 0, 24.4851)
+
+[node name="medkit2" parent="." index="11" instance=ExtResource("9_k8a0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8668, 0, 33.0853)
