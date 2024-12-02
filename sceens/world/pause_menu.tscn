@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bjh4edcpfqfdk"]
+
+[node name="pauseMenu" type="CanvasLayer"]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.207843)
+offset_right = 1151.0
+offset_bottom = 649.0
+color = Color(0.0142752, 0.0142752, 0.0142752, 1)

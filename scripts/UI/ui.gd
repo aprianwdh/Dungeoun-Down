@@ -3,6 +3,7 @@ extends CanvasLayer
 var current_wepon = Global.current_weapon
 var ammo = Global.ammo
 
+var menu_open = false
 var time_since_last_shoot = 0.0
 var fire_rate = 1.0
 var can_shoots = true
@@ -21,6 +22,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_just_pressed('esc'):
+		toggle_menu()
 	time_since_last_shoot += delta
 	can_shoots = time_since_last_shoot >= (1.0/fire_rate)
 	
@@ -99,3 +102,14 @@ func update_score_label():
 func update_weapon_texture():
 	if $WEAPON.texture != texture_weapon[Global.current_weapon]:
 		$WEAPON.texture = texture_weapon[Global.current_weapon]
+		
+func toggle_menu():
+	menu_open = !menu_open
+	if menu_open:
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Tampilkan kursor
+		$pauseMenu.visible = true  # Menampilkan menu
+	else:
+		get_tree().paused = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Sembunyikan kursor
+		$pauseMenu.visible = false  # Menyembunyikan menu

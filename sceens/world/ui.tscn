@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://mbs2yfovvhjx"]
+[gd_scene load_steps=46 format=3 uid="uid://mbs2yfovvhjx"]
 
 [ext_resource type="Texture2D" uid="uid://bmrx2ugfj5kih" path="res://assets/weapons/wolfweapons.png" id="1_ik0ej"]
 [ext_resource type="Script" path="res://scripts/UI/ui.gd" id="1_joo8t"]
 [ext_resource type="Texture2D" uid="uid://cu0ldbcp5y8ps" path="res://assets/player/bjface.png" id="3_ie41s"]
+[ext_resource type="PackedScene" uid="uid://bjh4edcpfqfdk" path="res://sceens/world/pause_menu.tscn" id="4_basm3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0avsk"]
 atlas = ExtResource("1_ik0ej")
@@ -98,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrd56")
 }],
-"loop": true,
+"loop": false,
 "name": &"iddle_mini",
 "speed": 5.0
 }, {
@@ -354,13 +355,14 @@ animations = [{
 }]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_joo8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(542, 382)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_rtp4d")
-animation = &"iddle_machine"
+animation = &"iddle_knife"
 autoplay = "iddle_knife"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -585,5 +587,8 @@ animation = &"40"
 autoplay = "100"
 frame = 1
 frame_progress = 0.021245
+
+[node name="pauseMenu" parent="." instance=ExtResource("4_basm3")]
+visible = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

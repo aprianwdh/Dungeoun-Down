@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnxcitugo0er5"]
+
+[ext_resource type="AudioStream" uid="uid://17uaac0elg2k" path="res://assets/sfx/gun.ogg" id="1_40amk"]
+[ext_resource type="Script" path="res://scripts/UI/audio_manager.gd" id="1_l78qr"]
+[ext_resource type="AudioStream" uid="uid://biq0hlsn3os06" path="res://assets/sfx/mini.ogg" id="2_vyxu0"]
+[ext_resource type="AudioStream" uid="uid://v78uyd854t4i" path="res://assets/sfx/machine.ogg" id="3_ybmnn"]
+[ext_resource type="AudioStream" uid="uid://bvnc782pdlhoa" path="res://assets/sfx/item-pickup-37089.mp3" id="4_m57d7"]
+[ext_resource type="AudioStream" uid="uid://bji4l8qm3cdn5" path="res://assets/sfx/sword.mp3" id="6_m50xr"]
+[ext_resource type="AudioStream" uid="uid://b3qro8mvjwqnd" path="res://assets/sfx/Enemy Pain.wav" id="7_xjp6j"]
+[ext_resource type="AudioStream" uid="uid://0a7djh0p3xoy" path="res://assets/sfx/Health.wav" id="8_t5chy"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_l78qr")
+
+[node name="gun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_40amk")
+volume_db = -5.0
+
+[node name="gunEnemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_40amk")
+volume_db = -10.0
+
+[node name="mini" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vyxu0")
+volume_db = -5.0
+
+[node name="machine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ybmnn")
+volume_db = -5.0
+
+[node name="pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m57d7")
+
+[node name="knife" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_m50xr")
+
+[node name="guard_die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xjp6j")
+volume_db = 2.0
+
+[node name="health" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_t5chy")
+volume_db = 2.0

@@ -124,7 +124,7 @@ script = ExtResource("1_8va67")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.28215, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_3jpuo")
-animation = &"iddle"
+animation = &"deafult"
 autoplay = "iddle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
