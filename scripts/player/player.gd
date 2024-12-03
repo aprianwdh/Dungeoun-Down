@@ -38,8 +38,8 @@ func _physics_process(delta):
 		self.rotate_y(-TURN_SPEED)
 
 	# Menembak jika diizinkan.
-	if Input.is_action_pressed("ui_accept"):
-		if ui.can_shoots == true:
+	if Input.is_action_pressed("shoot"):
+		if ui.can_shoots== true:
 			shoot()
 
 	move_and_slide()

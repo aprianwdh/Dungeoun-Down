@@ -355,11 +355,10 @@ animations = [{
 }]
 
 [node name="UI" type="CanvasLayer"]
-process_mode = 3
 script = ExtResource("1_joo8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(542, 382)
+position = Vector2(540, 382)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_rtp4d")
 animation = &"iddle_knife"

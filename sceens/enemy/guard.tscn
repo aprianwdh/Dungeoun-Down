@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cibbvn1a3ydmx"]
+[gd_scene load_steps=17 format=3 uid="uid://cibbvn1a3ydmx"]
 
 [ext_resource type="Script" path="res://scripts/enemy/guard.gd" id="1_8va67"]
 [ext_resource type="Texture2D" uid="uid://hoj5efk3v22o" path="res://assets/enemy/guard.png" id="1_b5g4i"]
@@ -111,9 +111,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x1s8q"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_s5e2i"]
-radius = 11.4513
+height = 2.15485
 
 [node name="Guard" type="CharacterBody3D"]
 collision_layer = 2
@@ -135,12 +133,3 @@ shape = SubResource("CapsuleShape3D_x1s8q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25044, 0)
 target_position = Vector3(0, 0, -10)
 collision_mask = 3
-
-[node name="ChaseArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.604519, 0)
-shape = SubResource("SphereShape3D_s5e2i")
-
-[connection signal="body_entered" from="ChaseArea" to="." method="_on_chase_area_body_entered"]
-[connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]

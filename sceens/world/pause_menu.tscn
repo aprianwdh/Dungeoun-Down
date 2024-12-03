@@ -1,10 +1,45 @@
-[gd_scene format=3 uid="uid://bjh4edcpfqfdk"]
+[gd_scene load_steps=2 format=3 uid="uid://bjh4edcpfqfdk"]
+
+[ext_resource type="Script" path="res://scripts/UI/pause_menu.gd" id="1_8numg"]
 
 [node name="pauseMenu" type="CanvasLayer"]
 process_mode = 3
+script = ExtResource("1_8numg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.207843)
 offset_right = 1151.0
 offset_bottom = 649.0
 color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -69.0
+offset_right = 38.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="restart" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="quit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

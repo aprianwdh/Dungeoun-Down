@@ -31,7 +31,7 @@ func _process(delta):
 		Global.current_weapon = 'knife'
 		$AnimatedSprite2D.play("iddle_knife")
 		
-	if Input.is_action_pressed('ui_accept') and can_shoots:
+	if Input.is_action_pressed('shoot') and can_shoots:
 		if Global.current_weapon == 'knife':
 			$AnimatedSprite2D.play("tusuk")
 		else :
@@ -113,3 +113,6 @@ func toggle_menu():
 		get_tree().paused = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Sembunyikan kursor
 		$pauseMenu.visible = false  # Menyembunyikan menu
+
+func restart_game():
+	pass
